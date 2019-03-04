@@ -1,0 +1,28 @@
+$colors: (
+    primary: #abcabc,
+    accent: red,
+    dark: black
+);
+$style1: (background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg"), width: 500px, height: 700px, border: 1px solid #abc, background-size:contain);
+$box: 5px 10px 8px 10px #888888;
+@mixin card($width, $height, $background-image, $border, $background-size){
+    width:$width;
+    height: $height;
+    background-image:$background-image;
+    border: $border;
+    background-size: $background-size;
+}
+
+
+body {
+    background-color: map-get($colors, primary);
+    #bg {
+        -webkit-clip-path: polygon(0 0, 0% 100%, 100% 46%);
+        clip-path: polygon(0 0, 0% 100%, 100% 46%);
+        box-shadow: $box;
+        @include card($style1...);
+        width:200px;
+        height: 40px;
+        background-color: map-get($colors,accent)
+    }
+}
